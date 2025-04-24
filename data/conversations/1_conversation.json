@@ -1,0 +1,117 @@
+[
+  {
+    "timestamp": "2025-04-24T21:42:16.134350",
+    "topic": "今日はどんな食べ物を食べますか",
+    "user_level": "N3",
+    "user_input": "こんにちは",
+    "correction": {
+      "hasError": false,
+      "original": "こんにちは",
+      "suggestion": "",
+      "explanation": "Câu đúng, rất tự nhiên!"
+    },
+    "reply": "こんにちは。いい天気ですね。今日はどんな食べ物を食べますか？",
+    "vocabulary": [
+      {
+        "word": "天気",
+        "reading": "てんき",
+        "meaning": "thời tiết"
+      },
+      {
+        "word": "食べ物",
+        "reading": "たべもの",
+        "meaning": "thức ăn, đồ ăn"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T21:43:22.706686",
+    "topic": "今日はどんな食べ物を食べますか",
+    "user_level": "N3",
+    "user_input": "今日は卵と野菜を食べました",
+    "correction": {
+      "hasError": true,
+      "original": "今日は卵と野菜を食べました",
+      "suggestion": "今日は卵と野菜を食べます",
+      "explanation": "Câu hỏi là \"Hôm nay bạn *sẽ* ăn món gì?\" (今日はどんな食べ物を食べますか). Bạn trả lời là \"Hôm nay tôi *đã* ăn trứng và rau.\" (今日は卵と野菜を食べました) sử dụng thì quá khứ. Cần chia động từ ở thì tương lai hoặc thể hiện dự định, nên sửa thành \"Hôm nay tôi *sẽ* ăn trứng và rau.\" (今日は卵と野菜を食べます)"
+    },
+    "reply": "そうですか。卵と野菜は体にいいですね。他に何か食べますか？",
+    "vocabulary": [
+      {
+        "word": "他に",
+        "reading": "hoka ni",
+        "meaning": "ngoài ra, thêm nữa"
+      },
+      {
+        "word": "何か",
+        "reading": "nanika",
+        "meaning": "cái gì đó, điều gì đó"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T21:50:05.642636",
+    "topic": "あなたはどうですか",
+    "user_level": "N3",
+    "user_input": "今日は卵と野菜を食べました",
+    "correction": {
+      "hasError": true,
+      "original": "今日は卵と野菜を食べました",
+      "suggestion": "今日、卵と野菜を食べました",
+      "explanation": "Cần thêm dấu phẩy (、) sau \"今日\" để ngắt câu cho tự nhiên hơn. Tuy câu không sai về ngữ pháp, nhưng thêm dấu phẩy sẽ giúp câu nói trôi chảy hơn theo thói quen của người Nhật."
+    },
+    "reply": "そうですか。今日、卵と野菜を召し上がったんですね。バランスの良い食事でいいですね。他に何か召し上がりましたか？それとも、これから何か食べる予定ですか？",
+    "vocabulary": [
+      {
+        "word": "召し上がる",
+        "reading": "めしあがる",
+        "meaning": "ăn (kính ngữ)"
+      },
+      {
+        "word": "バランスの良い食事",
+        "reading": "バランスのよいしょくじ",
+        "meaning": "bữa ăn cân bằng"
+      },
+      {
+        "word": "予定",
+        "reading": "よてい",
+        "meaning": "dự định"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T21:51:02.155032",
+    "topic": "今日はどんな食べ物を食べますか",
+    "user_level": "N3",
+    "user_input": "あなたはどうですか",
+    "correction": {
+      "hasError": true,
+      "original": "あなたはどうですか",
+      "suggestion": "先生はどうですか",
+      "explanation": "Trong trường hợp này, \"あなた\" (anata - bạn) hơi thiếu lịch sự khi hỏi giáo viên. Nên dùng \"先生\" (sensei - giáo viên/thầy cô) để thể hiện sự tôn trọng. Hoặc có thể dùng cách nói gián tiếp lịch sự hơn."
+    },
+    "reply": "そうですね。私はこれからサンドイッチとサラダを食べようと思っています。卵と野菜のように体にいいものを食べるのは大切ですね。〇〇さんは、他に何か好きな食べ物がありますか？",
+    "vocabulary": [
+      {
+        "word": "これから",
+        "reading": "korekara",
+        "meaning": "từ bây giờ, sau này"
+      },
+      {
+        "word": "サンドイッチ",
+        "reading": "sandoitchi",
+        "meaning": "sandwich"
+      },
+      {
+        "word": "サラダ",
+        "reading": "sarada",
+        "meaning": "salad"
+      },
+      {
+        "word": "大切",
+        "reading": "taisetsu",
+        "meaning": "quan trọng"
+      }
+    ]
+  }
+]
