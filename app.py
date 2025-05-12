@@ -3,6 +3,7 @@ from apis import init_api
 from config import Config
 import logging
 import os
+from flask_cors import CORS
 
 # Configure logging
 logging.basicConfig(
@@ -14,6 +15,7 @@ logger = logging.getLogger(__name__)
 def create_app():
     """Create and configure Flask application"""
     app = Flask(__name__)
+    CORS(app, origins="*", supports_credentials=True, allow_headers="*")
     
     # Initialize REST API
     api = init_api(app)
