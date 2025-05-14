@@ -12,7 +12,7 @@ class GeminiService:
         """Initialize the Gemini service with API key"""
         genai.configure(api_key=Config.GEMINI_API_KEY)
         # Get the generative model
-        self.model = genai.GenerativeModel('gemini-1.5-pro')
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
         
         # Ensure conversations directory exists
         os.makedirs("data/conversations", exist_ok=True)
@@ -125,6 +125,11 @@ class GeminiService:
             5. Tập trung vào lỗi ngữ pháp quan trọng nhất, tránh sửa quá nhiều
             6. Phản hồi bằng kính ngữ (敬語) hoặc thân mật tùy tình huống
             7. Luôn kèm câu hỏi mở để tiếp tục hội thoại, phù hợp với chủ đề {topic}
+            8. Đảm bảo câu trả lời có độ dài phù hợp với người học
+            10. Không đính kèm icon, emoji, các kí tự đặc biệt
+            11. Đảm bảo câu trả lời có thể sử dụng để tạo speech to text
+            12. Khi đếm số lượng hội thoại đã diễn ra lớn hơn 5, chào tạm biệt và đề nghị người học có thể tiếp tục hội thoại vào lúc khác
+            13. Vì là văn nói nên không bắt lỗi dấu câu
             
             Chỉ trả về JSON, không có văn bản giới thiệu hoặc kết luận.
             """
@@ -159,13 +164,18 @@ class GeminiService:
                     "user_input": user_input,
                     "correction": response_json.get("correction", {}),
                     "reply": response_json.get("reply", ""),
-                    "vocabulary": response_json.get("vocabulary", []),
-                    "audio_reply": response_json.get("audio_reply", None)
+                    "vocabulary": response_json.get("vocabulary", [])
                 }
                 
                 # Append to conversation history and save
                 conversation_history.append(new_exchange)
                 self._save_conversation_history(user_id, conversation_history)
+                
+                # Add audio_reply only to the response, not in history
+                if audio_result and audio_result["status"] == "success":
+                    response_json["audio_reply"] = audio_result["audio_data"]
+                else:
+                    response_json["audio_reply"] = None
                 
                 return {
                     "status": "success",
